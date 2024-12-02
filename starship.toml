@@ -1,0 +1,94 @@
+add_newline = false
+
+format = """
+$sudo\
+$directory\
+$git_branch\
+$git_commit\
+$git_status\
+$character
+"""
+
+right_format = """
+$cmd_duration\
+$python\
+$lua\
+$rust\
+$go\
+$nodejs
+"""
+
+palette = "oldworld"
+
+[sudo]
+format = "${symbol}"
+symbol = ' '
+disabled = false
+
+[character]
+success_symbol = '[](bold blue) '
+error_symbol = '[󰅙](bold red) '
+
+[cmd_duration]
+min_time = 1
+format = "(fg:bg bg:bg)[](fg:purple bg:bg)[ $duration](fg:bg bg:purple)[](fg:purple bg:none) "
+style = "fg:purple bg:bg"
+
+[directory]
+format = "(fg:bg bg:bg)[](fg:magenta bg:bg)[  $path](fg:bg bg:magenta italic)[](fg:magenta bg:none) "
+style = "fg:#d9d7d6 bg:bg"
+truncation_length = 1
+truncate_to_repo = true
+truncation_symbol = '…/'
+
+[directory.substitutions]
+"~" = " "
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+format = "[ ](fg:purple)[$branch](fg:fg) "
+
+[git_status]
+staged = '[++$count](fg:green)'
+format = '\[[$all_status](fg:cyan)\] '
+
+[python]
+format = "(fg:bg bg:bg)[](fg:green bg:bg)[${symbol}(${virtualenv})-(${version})](fg:bg bg:green)[](fg:green bg:none) "
+style = "fg:green bg:bg"
+version_format = "${major}${minor}"
+symbol = '󰌠 '
+
+[lua]
+format = "(fg:bg bg:bg)[](fg:blue bg:bg)[$symbol$version](fg:bg bg:blue)[](fg:blue bg:none) "
+style = "fg:blue bg:bg"
+symbol = ' '
+
+[rust]
+format = "(fg:bg bg:bg)[](fg:red bg:bg)[$symbol$version](fg:bg bg:red)[](fg:red bg:none) "
+style = "fg:red bg:bg"
+symbol = ' '
+
+[nodejs]
+format = "(fg:bg bg:bg)[](fg:green bg:bg)[$symbol$version](fg:bg bg:green)[](fg:green bg:none) "
+style = "fg:green bg:bg"
+symbol = '󰎙 '
+
+[golang]
+format = "(fg:bg bg:bg)[](fg:blue bg:bg)[$symbol$version-$name](fg:bg bg:blue)[](fg:blue bg:none) "
+style = "fg:blue bg:bg"
+symbol = ' '
+
+[palettes.oldworld]
+magenta = "#e29eca"
+purple = "#aca1cf"
+red = "#ea83a5"
+orange = "#f5a191"
+yellow = "#e6b99d"
+green = "#90b99f"
+cyan = "#85b5ba"
+blue = "#92a2d5"
+fg = "#c9c7cd"
+bg = "#161617"
