@@ -25,6 +25,10 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
+    -- THEMES
+		require("plugins.ui"),
+		require("themes.onedark"),
+		require("themes.catpuccin"),
 		-- CORE
 		require("plugins.nvimtree"),
 		require("plugins.treesiter"),
@@ -34,10 +38,7 @@ require("lazy").setup({
 		require("plugins.database"),
     -- TOOLS
 		require("plugins.tools"),
-		-- THEMES
-		require("plugins.ui"),
-		require("themes.onedark"),
-	},
+},
 	checker = { enabled = true },
 })
 

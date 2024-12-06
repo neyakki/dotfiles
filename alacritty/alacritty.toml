@@ -1,3 +1,8 @@
+general.import = [
+  #"~/.config/alacritty/themes/catppuccin-latte.toml"
+  "~/.config/alacritty/themes/catppuccin-frappe.toml"
+]
+
 [env]
 TERM = "alacritty"
 

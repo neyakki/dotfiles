@@ -1,0 +1,44 @@
+@import "../themes/frappe.css";
+
+* {
+	font-family: "FiraCode Nerd Font";
+	font-size: 14px;
+	min-height: 0;
+}
+
+#waybar {
+    background-color: @mantle;
+}
+
+#cpu,
+#disk,
+#memory,
+#temperature {
+ 	padding: 1px 15px;
+    margin: 5px;
+	color: @text;
+	background-color: @base;
+    border: none;
+    border-radius: 20px;
+}
+
+#cpu:hover,
+#disk:hover,
+#memory:hover,
+#temperature:hover {
+	color: @flamingo;
+}
+
+#cpu.warning,
+#disk.warning,
+#memory.warning,
+#temperature.warning {
+    color: @yellow;
+}
+
+#cpu.critical,
+#disk.critical,
+#memory.critical,
+#temperature.critical {
+    color: @red;
+}

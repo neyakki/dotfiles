@@ -31,6 +31,10 @@ local lsp = {
 
     -- LSP
     -- https //luals.github.io/wiki/settings
+    lspconfig.hyprls.setup({})
+    lspconfig.bashls.setup({})
+    lspconfig.cssls.setup({})
+    lspconfig.html.setup({})
     lspconfig.lua_ls.setup({
       settings = {
         Lua = {
@@ -277,10 +281,26 @@ local cmp = {
     require('lspconfig').pyright.setup {
       capabilities = capabilities
     }
+    require('lspconfig').hyprls.setup {
+      capabilities = capabilities
+    }
+    require('lspconfig').html.setup {
+      capabilities = capabilities
+    }
+    require('lspconfig').cssls.setup {
+      capabilities = capabilities
+    }
+    require('lspconfig').bashls.setup {
+      capabilities = capabilities
+    }
   end
 }
 
 return {
   lsp,
   cmp,
+  {
+    "luckasRanarison/tree-sitter-hyprlang",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+  }
 }

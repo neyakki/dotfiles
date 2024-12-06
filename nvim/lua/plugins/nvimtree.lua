@@ -6,14 +6,14 @@ return {
     opts = {},
     keys = {
         {
-            "<leader>n",
+            "<leader>nf",
             function()
                 vim.cmd([[ NvimTreeToggle ]])
             end,
             desc = "Toggle NvimTree"
         },
         {
-            "<leader>nf",
+            "<leader>n",
             function()
                 vim.cmd([[ NvimTreeFocus ]])
             end,
