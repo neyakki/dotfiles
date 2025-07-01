@@ -1,18 +1,23 @@
-# Env
+export PATH=$HOME/.local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
-export PATH="~/.local/bin"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
-# System
-plugins=(poetry docker docker-compose golang git-flow git git-commit zsh-autosuggestions zsh-syntax-highlighting you-should-use)
-source $ZSH/oh-my-zsh.sh
+plugins=(git git-commit zsh-autosuggestions zsh-syntax-highlighting you-should-use)
+
 eval "$(starship init zsh)"
+source $ZSH/oh-my-zsh.sh
 
 # Alias
-alias cat="bat"
-alias ls="eza --color=always --icons"
-alias la="eza --color=always --icons --total-size -l --group-directories-first"
-alias ll="eza --color=always --icons --total-size -la --group-directories-first"
-alias lf="eza --color=always --icons -f"
-alias ld="eza --color=always --icons -d"
-alias tree="eza --color=always --icons -T"
+alias ll="ls -al"
+alias ezas="eza --color=always --icons=auto"
+alias ezaa="eza --color=always --icons=auto --total-size -l --group-directories-first"
+alias ezal="eza --color=always --icons=auto --total-size -la --group-directories-first"
+alias ezaf="eza --color=always --icons=auto -f"
+alias ezad="eza --color=always --icons=auto -d"
+alias tree="eza --color=always --icons=auto -T"
+alias conf="NVIM_ROOT=~/.config nvim"
+
+# Custom Git Alias
+alias gh="git hist"
+alias ghnp="git --no-pager hist"
