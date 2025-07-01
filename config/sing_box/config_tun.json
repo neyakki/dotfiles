@@ -1,0 +1,79 @@
+{
+  "log": {
+    "level": "info",
+    "output": "stdout"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "interface_name": "sing0",
+      "address": ["172.19.0.1/30"],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": false,
+      "stack": "system",
+      "sniff": true,
+      "sniff_override_destination": true
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "vless",
+      "server": "rodshot.me",
+      "server_port": 443,
+      "uuid": "de61dc84-1a24-4f8b-b84b-07348fe01ee6",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+          "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+          },
+        "enabled": true,
+        "server_name": "frank-unkelbach.de",
+        "reality": {
+          "enabled": true,
+          "public_key": "6Vkslj5TsRGGpZ05hSeaslyddrOSMPw6rMDeEvyrV2o",
+          "short_id": "294d18426872da"
+        }
+      },
+      "tag": "proxy"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "rules": [
+      {
+        "domain_suffix": [
+            "starship.rs",
+            "jetbrains.com",
+            "api.github.com",
+            "githubcopilot.com",
+            "astral.sh",
+            "cloudflare-ech.com",
+            "cloudflare-dns.com",
+            "cloudflare.com",
+            "medium.com",
+            "youtube.com",
+            "googlevideo.com",
+            "yt3.ggpht.com",
+            "i.ytimg.com",
+            "cdn.oaistatic.com",
+            "chatgpt.com",
+            "openai.com",
+            "hyprland.org",
+            "wiki.hyprland.org",
+            "hypr.land"
+        ],
+        "outbound": "proxy"
+      },
+      {
+        "outbound": "direct"
+      }
+    ]
+  }
+}
+

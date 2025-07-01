@@ -1,0 +1,18 @@
+general.import = []
+
+[env]
+TERM = "alacritty"
+
+[window]
+padding = { x = 10, y = 10 }
+
+[font]
+normal = { family = "FiraCode Nerd Font" }
+size = 11
+
+[cursor]
+style = { shape = "underline", blinking = "always" }
+unfocused_hollow = false
+
+[mouse]
+hide_when_typing = true
