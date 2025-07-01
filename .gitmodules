@@ -1,0 +1,9 @@
+[submodule "neyvim"]
+	path = neyvim
+	url = git@github.com:neyakki/neyvim.git
+[submodule "utils"]
+	path = utils
+	url = git@github.com:neyakki/utils.git
+[submodule "vscode"]
+	path = vscode
+	url = git@github.com:neyakki/VSCodeSettings.git
